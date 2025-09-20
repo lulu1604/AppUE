@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.appue.presentation.auth.LoginScreen
+import com.example.appue.presentation.auth.RegisterScreen
+import com.example.appue.presentation.navegation.AppNavGraph
 import com.example.appue.ui.theme.AppUETheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +23,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppUETheme {
                 //aqui va el nombre tal cual de la funcion !!!!!!!!!!!!!
-                LoginScreen()
+
+                AppNavGraph()
 
             }
         }

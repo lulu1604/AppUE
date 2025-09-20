@@ -15,12 +15,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
+import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun LoginScreen(){         //AQUIIII EL NOMBRE !!!!!!!!!!!!!
+fun LoginScreen(navController: NavController){         //AQUIIII EL NOMBRE !!!!!!!!!!!!!
     //email y password
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -50,7 +53,12 @@ fun LoginScreen(){         //AQUIIII EL NOMBRE !!!!!!!!!!!!!
 
         Button( onClick = {
             /*TODO*/
+            if (email.isNotBlank() && password.isNotBlank()){
+                navController.navigate("home")
+
+            }
         },
+            modifier = Modifier.align (Alignment.CenterHorizontally)
         ) {
             Text(text= "Iniciar Sesión")
 
